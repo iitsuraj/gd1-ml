@@ -1,1 +1,1 @@
-web: python suraj.py
+web: gunicorn suraj:app
