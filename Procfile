@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT suraj:app
+web: python suraj.py
