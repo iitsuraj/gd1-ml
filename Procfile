@@ -1,1 +1,1 @@
-web: gunicorn suraj:app
+web: gunicorn -b :$PORT suraj:app
