@@ -57,4 +57,4 @@ def run_data():
     return (run+'\n'+user_id+'\n prediction='+str(day_n1))
  
 if __name__ == "__main__":
-    app.run()
+    app.run(environ.get('PORT'))
