@@ -6,6 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 import sqlite3
 from sqlalchemy import create_engine
+from datetime import datetime
+
 
 def predict(df3,value):
     X,y = df3[1].values.reshape(-1,1),df3[2].values.reshape(-1,1)
@@ -41,6 +43,7 @@ def run_data():
     day_n=float(run)##value fetched from website
     day=df.values[-1][0]
     day= str(int(day+1))
+    date = datetime.now().strftime(format('%d/%m/%Y'))
     print(day)
     if day=='150':
         day_n_1=day_n
@@ -62,7 +65,8 @@ def run_data():
         userid=user_id,
         run=run,
         prediction = str(abs(round(float(day_n1),3))),
-        day = str(int(day)-150)
+        day = str(int(day)-150),
+        date = date
     )
 
  
