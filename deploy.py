@@ -43,7 +43,7 @@ def run_data():
     day_n=float(run)##value fetched from website
     day=df.values[-1][0]
     day= str(int(day+1))
-    date = datetime.now().strftime(format('%d/%m/%Y'))
+    date = datetime.now().strftime(format('%-d/%-m/%Y'))
     print(day)
     if day=='150':
         day_n_1=day_n
