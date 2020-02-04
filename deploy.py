@@ -7,6 +7,7 @@ from sklearn import metrics
 import sqlite3
 from sqlalchemy import create_engine
 from datetime import datetime
+from flask_cors import CORS
 
 
 def predict(df3,value):
@@ -19,6 +20,7 @@ def predict(df3,value):
     return(pred)
 
 app = Flask(__name__)
+CORS(app)
 @app.route('/') 
 def run_data(): 
     run = request.args.get('run', default = '0', type = str)
