@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split 
 from sklearn import metrics
-import sqlite3
+import sqlite3 , time
 from sqlalchemy import create_engine
 from datetime import datetime
 from flask_cors import CORS
@@ -45,7 +45,7 @@ def run_data():
     day_n=float(run)##value fetched from website
     day=df.values[-1][0]
     day= str(int(day+1))
-    date = datetime.now().strftime(format('%-m/%-d/%Y'))
+    date = datetime.fromtimestamp(time.time()+19800).strftime(format('%-m/%-d/%Y'))
     print(day)
     if day=='150':
         day_n_1=day_n
