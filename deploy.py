@@ -25,7 +25,9 @@ CORS(app)
 def run_data(): 
     run = request.args.get('run', default = '0', type = str)
     user_id = request.args.get('user_id', default = '0', type = str)
+    print(user_id)
     user_id = "'"+str(user_id)+"'"
+    print(user_id)
     #day=request.args.get('day', default = '0', type = str)
     engine = create_engine('sqlite:///user.db', echo=False)
     df = pd.read_csv('file1.csv',index_col='day')
