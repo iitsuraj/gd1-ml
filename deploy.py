@@ -68,9 +68,9 @@ def run_data():
         conn.close()
     return jsonify(
         userid=user_id,
-        run=run,
-        prediction = str(abs(round(float(day_n1),3))),
-        day = str(int(day)-150),
+        run= int(run),
+        prediction = abs(round(float(day_n1),3)),
+        day = int(day)-150,
         date = date
     )
 
